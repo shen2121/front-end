@@ -1,0 +1,16 @@
+$(function(){
+    $(".sample_btn").click(function(){
+       $.ajax({
+         url:'test.html',
+         type:'GET',
+         dateType:'html'
+       }).done(function(data){
+         //通信が成功した場合
+         $(".result").html(data);
+       }).fail(function(){
+         //通信が失敗した場合
+         console.log("通信が失敗しました");
+       });
+    });
+
+});
